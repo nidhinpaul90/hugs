@@ -30,7 +30,7 @@ def is_human(captcha_response):
     """ Validating recaptcha response from google server
         Returns True captcha test passed for submitted form else returns False.
     """
-    secret = "FGceAAAAAJFuQYuoLYiFbTWWXvfeKJC9dp7U"
+    secret = "6Le-FGceAAAAAJFuQYuoLYiFbTWWXvfeKJC9dp7U"
     payload = {'response':captcha_response, 'secret':secret}
     response = requests.post("https://www.google.com/recaptcha/api/siteverify", payload)
     response_text = json.loads(response.text)
@@ -51,7 +51,7 @@ def make_session_permanent():
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    sitekey = '6LeMyJ0cAAAAANIokl_HO3phHua9-C7MG0laOzwI'
+    sitekey = '6Le-FGceAAAAAIOGkrueYbBmy0Niv1F_qMSc9Eiy'
     if session.get('ip') is None:
         session['ip'] = request.environ['REMOTE_ADDR']
     if session.get('captcha_response') is None:
