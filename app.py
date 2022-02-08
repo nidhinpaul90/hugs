@@ -23,14 +23,14 @@ engine = create_engine(os.getenv("DATABASE_URL"))
 db = scoped_session(sessionmaker(bind=engine))
 mentionflag=0
 msgflag=0
-ip_ban_list = ['103.224.182.212', '10.1.90.119','10.1.82.90', '10.1.49.29', '10.1.88.135', '10.1.85.234', '10.1.82.205']
+ip_ban_list = ['9999999999999999999999999999999999999999999999999999999999999']
 
 
 def is_human(captcha_response):
     """ Validating recaptcha response from google server
         Returns True captcha test passed for submitted form else returns False.
     """
-    secret = "6LeMyJ0cAAAAAE3RNcsVxPuRV6GZA_GiMx04HXXT"
+    secret = "FGceAAAAAJFuQYuoLYiFbTWWXvfeKJC9dp7U"
     payload = {'response':captcha_response, 'secret':secret}
     response = requests.post("https://www.google.com/recaptcha/api/siteverify", payload)
     response_text = json.loads(response.text)
